@@ -1,0 +1,260 @@
+body
+{
+	margin: 0 auto;
+	background-color: #2F3336;
+	color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    width: 1000px;
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		width: 550px;
+		font-size: 17px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	body {
+		width: 750px;
+		font-size: 17px;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	body {
+		width: 950px;
+		font-size: 17px;
+	}
+}
+
+h1.logo
+{
+	font-size: 30px;
+	font-weight: 700;
+	color: #ddd;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+h2.logo
+{
+	font-size:24px;
+	font-weight: 700;
+	color: #ddd;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+.nav
+{
+	margin: 10px 0;
+    padding: 10px;
+    background-color: #1c74b2;
+	text-align: center;
+    border-radius: 10px;
+}
+
+.menu
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+	font-size: 13px;
+	min-height: 38px;
+	line-height: 200%;
+}
+
+.menu1
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+	font-size: 13px;
+	min-height: 15px;
+	line-height: 200%;
+}
+
+.menu1 li,
+.menu li
+{
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-right: 1px dashed #0a2b42;
+}
+
+.menu1 a,
+.menu a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu1 a:hover,
+.menu a:hover
+{
+	color: #0a2b42;
+}
+
+
+section p,
+article
+{
+    margin: 0px auto 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: #1c74b2;
+    width: 95%;
+}
+
+section p
+{
+	margin-top: 10px;
+	padding: 2px 0;
+	text-align: center;
+}
+
+article header,
+article h2,
+article p
+{
+    margin-left: 10px;
+}
+
+article p
+{
+	text-align: left;
+	margin: 0 10px;
+    padding: 10px;
+    background: #8db9d8;
+}
+
+article > footer
+{
+	text-align: right;
+   	padding: 1ex;
+   	font-size: 80%;
+}
+
+article > footer a,
+.user-info a
+{
+	margin: 0;
+	padding: 1px;
+	border:  1px solid #333;
+	border-radius: 5px;
+	background-color: #ccc;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0 1px #000;
+	display: inline-block;
+	width: 100px;
+}
+
+.user-info
+.user
+{
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+    text-align: right;
+}
+
+.user-info a
+{
+	width: auto;
+	padding: 3px 10px;
+}
+
+.user-info table
+{
+	width: 95%;
+	border-collapse: collapse;
+	margin: 20px auto 10px;
+}
+
+.user-info table td
+{
+    width: 25%;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+
+article > footer > nav
+{
+	float: left;
+	padding: 0;
+}
+
+form
+{
+	display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #1c74b2;
+    border-radius: 22px; 
+	margin: 0px auto;
+}
+
+form > input,
+form > textarea,
+form > header
+{
+	margin: 0px auto 5px;
+    width: 100%;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+form > header h2
+{
+    margin: 0px auto 10px;
+	text-align: center;
+}
+
+form > textarea
+{
+    resize: none;
+}
+
+.centered
+{
+    display: flex;
+}
+
+.centered button
+{
+    text-align: center;
+    margin: 10px auto;
+    width: 300px;
+    height: 30px;
+    background-color: #1c74b2;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    justify-content: center;
+}
+
+
+.error,
+a.danger
+{
+    color: #dc3545; 
+}
+
+body > footer
+{
+	clear:both;
+	text-align: center;
+}
