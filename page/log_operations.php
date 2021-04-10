@@ -199,7 +199,7 @@ function changePerm($userid, $datafile="txtFiles/users.txt", $separator=":-:")
                 $users[]=array( 
                     "userid"     => bin2hex($user['userid']),
                     "nickname"   => bin2hex($user['nickname']),
-                    "pass"       => md5($user['pass']),
+                    "pass"       => $user['pass'],
                     "privilege"  => bin2hex($user['privilege'])
                 );
             }
