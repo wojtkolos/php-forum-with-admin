@@ -3,7 +3,30 @@
 
     if($_SESSION['privilege'] == 'admin'){ ?>
         
-        <p class="user"><a href="?cmd=userlist">Lista uczestników</a>Zalogowany jako: <?=$_SESSION['userid']?> (<?=$_SESSION['nickname']?>) <a href="?cmd=logout" >WYLOGUJ</a></p>
+        <p class="user"><a href=
+        <?php if(isset($_GET['topic'])) 
+                                    {
+                                        if(isset($_GET['cmd']) && $_GET['cmd'] == "userlist")
+                                        {
+                                            echo "?topic=".$topic['topicid'];
+                                        }
+                                        else
+                                        {
+                                            echo "?topic=".$topic['topicid']."&cmd=userlist";
+                                        }
+                                    } else 
+                                    {
+                                        if(isset($_GET['cmd']) && $_GET['cmd'] == "userlist")
+                                        {
+                                            echo "index.php";
+                                        }
+                                        else
+                                        {
+                                            echo "?cmd=userlist";
+                                        }
+                                    }
+                                    ?>
+        >Lista uczestników</a>Zalogowany jako: <?=$_SESSION['userid']?> (<?=$_SESSION['nickname']?>) <a href="?cmd=logout" >WYLOGUJ</a></p>
     <?php } else{ ?>
         <p style="text-align: right;">Zalogowany jako: <?=$_SESSION['userid']?> (<?=$_SESSION['nickname']?>) <a href="?cmd=logout" >WYLOGUJ</a></p>
         <?php
@@ -26,10 +49,12 @@
                                 <td><?=$user['nickname']; ?></td>
                                 <td><?=$user['privilege']; ?></td>
                                 <td>
-                                    <?php if($user['userid'] != 'admin'){ ?>
+                                    <?php if($user['userid'] != 'admin'){
+                                        if($user['userid'] != $_SESSION['userid']){ ?>
                                     <a href="?cmd=changeuser&userid=<?=$user['userid']; ?>">Zmień</a>&nbsp;
                                     <a class="danger" href="?cmd=deluser&userid=<?=$user['userid']; ?>">Kasuj</a>
-                                    <?php } ?>
+                                    <?php }
+                                    } ?>
                                 </td>
                                 </tr>
                             <?php } ?>

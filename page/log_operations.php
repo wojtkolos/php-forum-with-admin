@@ -140,7 +140,7 @@ function set_sesion($userid, $datafile="txtFiles/users.txt", $separator=":-:")
     $_SESSION['privilege']=$user['privilege'];
 }
 
-function deleteUsr($userid, $datafile="users.txt", $separator=":-:")
+function deleteUsr($userid, $datafile="txtFiles/txtFiles/users.txt", $separator=":-:")
 {
     if($data=file($datafile))
     {
@@ -187,6 +187,7 @@ function changePerm($userid, $datafile="txtFiles/users.txt", $separator=":-:")
     {
         $user['privilege'] = "admin";
     }
+    
 
     if($data=file($datafile))
     {
@@ -231,5 +232,17 @@ function changePerm($userid, $datafile="txtFiles/users.txt", $separator=":-:")
 
 }
 
+function permCheck($datafile="txtFiles/users.txt", $separator=":-:")
+{
+    $user = get_user($_SESSION['userid']);
+    if($_SESSION['privilege']==$user['privilege'])
+    {
+        return TRUE;
+    }
+    $_SESSION['privilege'] = $user['privilege'];
+    
+    return FALSE;
+
+}
 
 ?>

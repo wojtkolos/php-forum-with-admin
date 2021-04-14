@@ -3,14 +3,7 @@ session_start();
 
 include('posts_operations.php');
 include('log_operations.php');
-/*
-$path = explode('/',dirname(__FILE__));
-$dirname = array_pop($path);
-$username = array_pop($path);
-$path = implode('/',$path);
-$tasks = array();
-foreach(scandir( "$path/$username" ) as $dir) if( is_dir("$path/$username/$dir") and $dir!='.' and $dir!='..') $tasks[] = $dir; 
-*/
+
 
 $path = explode('\\',dirname(__FILE__));
 $dirname = array_pop($path);
@@ -79,6 +72,7 @@ if(isset($_GET['cmd']))
     else if($cmd == 'changeuser')
     {
         changePerm($_GET['userid']);
+
         header("Location: index.php?cmd=userlist");
     } 
     else if($cmd == 'deluser')
@@ -96,7 +90,7 @@ if(isset($_GET['cmd']))
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" >
     <meta http-equiv="Pragma" content="no-cache" >
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="txtFiles/stylesheet" href="style3.css" type="text/css" />
 </head>
 <body>
     <header>
@@ -119,16 +113,20 @@ if(isset($_GET['cmd']))
         <?php 
         if(isset($_GET['topic']) > 0 && isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE) //show posts
         {
+            permCheck();
             $topicid = $_GET['topic'];
             include('post_list.php');
         }
         else if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE)
         {
+            permCheck();
             include('topic_list.php');
         } 
         else 
         {
+            
             include('login_module.php');
+            //header("Location: index.php");
         }
         ?>
     </section>
